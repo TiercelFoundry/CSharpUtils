@@ -11,7 +11,7 @@
     <Company>Tiercel Foundry</Company>
     <Authors>Grahame Watt</Authors>
     <Title>CSharp Utils - Tiercel Foundry</Title>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>Useful Game Dev Utilties for C#</Description>
     <Copyright>Tiercel Foundry</Copyright>
   </PropertyGroup>
