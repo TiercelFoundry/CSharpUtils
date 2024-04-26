@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: CSharpUtils
-        path: bin/Release/ 
+        path: ./CSharpUtils/bin/Release/ 
         
   release:
     runs-on: ubuntu-latest    
