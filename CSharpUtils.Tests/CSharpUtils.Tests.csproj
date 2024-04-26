@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StdUtils\StdUtils.csproj" />
+    <ProjectReference Include="..\CSharpUtils\CSharpUtils.csproj" />
   </ItemGroup>
 
 </Project>

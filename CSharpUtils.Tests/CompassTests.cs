@@ -1,6 +1,6 @@
-using TiercelFoundry.StdUtils;
+using NUnit.Framework;
 
-namespace StdUtils.Tests;
+namespace TiercelFoundry.CSharpUtils.Tests;
 
 public class CompassTests 
 {

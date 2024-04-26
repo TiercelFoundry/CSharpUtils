@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageIcon>tf_bird_blue.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/TiercelFoundry/CSharpUtils</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/TiercelFoundry/CSharpUtils</PackageProjectUrl>
+    <Company>Tiercel Foundry</Company>
+    <Authors>Grahame Watt</Authors>
+    <Title>CSharp Utils - Tiercel Foundry</Title>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Description>Useful Game Dev Utilties for C#</Description>
+    <Copyright>Tiercel Foundry</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\public\tf_bird_blue.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,4 @@
-﻿namespace TiercelFoundry.StdUtils;
+﻿namespace TiercelFoundry.CSharpUtils;
 
 
 public static class IListExtensions
