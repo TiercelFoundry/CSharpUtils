@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/TiercelFoundry/CSharpUtils</RepositoryUrl>
     <PackageProjectUrl>https://github.com/TiercelFoundry/CSharpUtils</PackageProjectUrl>
     <Company>Tiercel Foundry</Company>
-    <Authors>Grahame Watt</Authors>
+    <Authors>Tiercel Foundry, Grahame Watt</Authors>
     <Title>CSharp Utils - Tiercel Foundry</Title>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>Useful Game Dev Utilties for C#</Description>
