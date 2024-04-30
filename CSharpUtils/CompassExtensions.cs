@@ -14,6 +14,10 @@ public static class CompassExtensions
     public static Compass Anticlockwise(this Compass current, int steps = 1) 
     {
         return (Compass)((int)(current - steps) % 8);
+    }
 
+    public static Compass Opposite(this Compass current)
+    {
+        return current < Compass.S ? current + 4 : current - 4;
     }
 }
