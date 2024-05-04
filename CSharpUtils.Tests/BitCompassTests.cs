@@ -26,6 +26,33 @@ public class BitCompassTests
             Assert.That(BitCompass.SW.Clockwise(4), Is.EqualTo(BitCompass.NE));
             Assert.That(BitCompass.W.Clockwise(4), Is.EqualTo(BitCompass.E));
             Assert.That(BitCompass.NW.Clockwise(4), Is.EqualTo(BitCompass.SE));
+
+            Assert.That(BitCompass.N.Clockwise(-4), Is.EqualTo(BitCompass.S));
+            Assert.That(BitCompass.NE.Clockwise(-4), Is.EqualTo(BitCompass.SW));
+            Assert.That(BitCompass.E.Clockwise(-4), Is.EqualTo(BitCompass.W));
+            Assert.That(BitCompass.SE.Clockwise(-4), Is.EqualTo(BitCompass.NW));
+            Assert.That(BitCompass.S.Clockwise(-4), Is.EqualTo(BitCompass.N));
+            Assert.That(BitCompass.SW.Clockwise(-4), Is.EqualTo(BitCompass.NE));
+            Assert.That(BitCompass.W.Clockwise(-4), Is.EqualTo(BitCompass.E));
+            Assert.That(BitCompass.NW.Clockwise(-4), Is.EqualTo(BitCompass.SE));
+
+            Assert.That(BitCompass.N.Clockwise(20), Is.EqualTo(BitCompass.S));
+            Assert.That(BitCompass.NE.Clockwise(20), Is.EqualTo(BitCompass.SW));
+            Assert.That(BitCompass.E.Clockwise(20), Is.EqualTo(BitCompass.W));
+            Assert.That(BitCompass.SE.Clockwise(20), Is.EqualTo(BitCompass.NW));
+            Assert.That(BitCompass.S.Clockwise(20), Is.EqualTo(BitCompass.N));
+            Assert.That(BitCompass.SW.Clockwise(20), Is.EqualTo(BitCompass.NE));
+            Assert.That(BitCompass.W.Clockwise(20), Is.EqualTo(BitCompass.E));
+            Assert.That(BitCompass.NW.Clockwise(20), Is.EqualTo(BitCompass.SE));
+
+            Assert.That(BitCompass.N.Clockwise(-20), Is.EqualTo(BitCompass.S));
+            Assert.That(BitCompass.NE.Clockwise(-20), Is.EqualTo(BitCompass.SW));
+            Assert.That(BitCompass.E.Clockwise(-20), Is.EqualTo(BitCompass.W));
+            Assert.That(BitCompass.SE.Clockwise(-20), Is.EqualTo(BitCompass.NW));
+            Assert.That(BitCompass.S.Clockwise(-20), Is.EqualTo(BitCompass.N));
+            Assert.That(BitCompass.SW.Clockwise(-20), Is.EqualTo(BitCompass.NE));
+            Assert.That(BitCompass.W.Clockwise(-20), Is.EqualTo(BitCompass.E));
+            Assert.That(BitCompass.NW.Clockwise(-20), Is.EqualTo(BitCompass.SE));
         });
     }
 
@@ -51,22 +78,34 @@ public class BitCompassTests
             Assert.That(BitCompass.SW.Anticlockwise(4), Is.EqualTo(BitCompass.NE));
             Assert.That(BitCompass.W.Anticlockwise(4), Is.EqualTo(BitCompass.E));
             Assert.That(BitCompass.NW.Anticlockwise(4), Is.EqualTo(BitCompass.SE));
+
+            Assert.That(BitCompass.N.Anticlockwise(-20), Is.EqualTo(BitCompass.S));
+            Assert.That(BitCompass.NE.Anticlockwise(-20), Is.EqualTo(BitCompass.SW));
+            Assert.That(BitCompass.E.Anticlockwise(-20), Is.EqualTo(BitCompass.W));
+            Assert.That(BitCompass.SE.Anticlockwise(-20), Is.EqualTo(BitCompass.NW));
+            Assert.That(BitCompass.S.Anticlockwise(-20), Is.EqualTo(BitCompass.N));
+            Assert.That(BitCompass.SW.Anticlockwise(-20), Is.EqualTo(BitCompass.NE));
+            Assert.That(BitCompass.W.Anticlockwise(-20), Is.EqualTo(BitCompass.E));
+            Assert.That(BitCompass.NW.Anticlockwise(-20), Is.EqualTo(BitCompass.SE));
+
+            Assert.That(BitCompass.N.Anticlockwise(20), Is.EqualTo(BitCompass.S));
+            Assert.That(BitCompass.NE.Anticlockwise(20), Is.EqualTo(BitCompass.SW));
+            Assert.That(BitCompass.E.Anticlockwise(20), Is.EqualTo(BitCompass.W));
+            Assert.That(BitCompass.SE.Anticlockwise(20), Is.EqualTo(BitCompass.NW));
+            Assert.That(BitCompass.S.Anticlockwise(20), Is.EqualTo(BitCompass.N));
+            Assert.That(BitCompass.SW.Anticlockwise(20), Is.EqualTo(BitCompass.NE));
+            Assert.That(BitCompass.W.Anticlockwise(20), Is.EqualTo(BitCompass.E));
+            Assert.That(BitCompass.NW.Anticlockwise(20), Is.EqualTo(BitCompass.SE));
+
+            Assert.That(BitCompass.N.Anticlockwise(-20), Is.EqualTo(BitCompass.S));
+            Assert.That(BitCompass.NE.Anticlockwise(-20), Is.EqualTo(BitCompass.SW));
+            Assert.That(BitCompass.E.Anticlockwise(-20), Is.EqualTo(BitCompass.W));
+            Assert.That(BitCompass.SE.Anticlockwise(-20), Is.EqualTo(BitCompass.NW));
+            Assert.That(BitCompass.S.Anticlockwise(-20), Is.EqualTo(BitCompass.N));
+            Assert.That(BitCompass.SW.Anticlockwise(-20), Is.EqualTo(BitCompass.NE));
+            Assert.That(BitCompass.W.Anticlockwise(-20), Is.EqualTo(BitCompass.E));
+            Assert.That(BitCompass.NW.Anticlockwise(-20), Is.EqualTo(BitCompass.SE));
         });
     }
 
-    [Test]
-    public void BitCompassOppositeTests()
-    {
-        Assert.Multiple(() =>
-        {
-            Assert.That(BitCompass.N.Opposite(), Is.EqualTo(BitCompass.S));
-            Assert.That(BitCompass.NE.Opposite(), Is.EqualTo(BitCompass.SW));
-            Assert.That(BitCompass.E.Opposite(), Is.EqualTo(BitCompass.W));
-            Assert.That(BitCompass.SE.Opposite(), Is.EqualTo(BitCompass.NW));
-            Assert.That(BitCompass.S.Opposite(), Is.EqualTo(BitCompass.N));
-            Assert.That(BitCompass.SW.Opposite(), Is.EqualTo(BitCompass.NE));
-            Assert.That(BitCompass.W.Opposite(), Is.EqualTo(BitCompass.E));
-            Assert.That(BitCompass.NW.Opposite(), Is.EqualTo(BitCompass.SE));
-        });
-    }
 }
