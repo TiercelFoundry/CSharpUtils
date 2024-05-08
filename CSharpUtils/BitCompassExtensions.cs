@@ -64,4 +64,23 @@ public static class BitCompassExtensions
         };
     }
 
+    public static BitCompass FromDegrees(this float theta)
+    {
+        theta = theta > 360f ? theta % 360f :
+            theta < 0 ? 360f - (theta % 360f) :
+            theta;
+
+        return theta switch
+        {
+            float x when theta >= 337.5f || theta < 22.5f => BitCompass.N,
+            float x when theta >= 22.5f && theta < 67.5f => BitCompass.NE,
+            float x when theta >= 67.5f && theta < 112.5f => BitCompass.E,
+            float x when theta >= 112.5f && theta < 157.5f => BitCompass.SE,
+            float x when theta >= 157.5f && theta < 202.5f => BitCompass.S,
+            float x when theta >= 202.5f && theta < 247.5f => BitCompass.SW,
+            float x when theta >= 247.5f && theta < 292.5f => BitCompass.W,
+            float x when theta >= 292.5f && theta < 337.5f => BitCompass.NW,
+            _ => throw new System.ArgumentException()
+        };
+    }
 }

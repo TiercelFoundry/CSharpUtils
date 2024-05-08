@@ -64,4 +64,24 @@ public static class CompassExtensions
             _ => throw new ArgumentException("Invalid Compass", paramName: nameof(compass))
         };
     }
+
+    public static Compass FromDegrees(this float theta)
+    {
+        theta = theta > 360f ? theta % 360f :
+            theta < 0 ? 360f - (theta % 360f) :
+            theta;
+
+        return theta switch
+        {
+            float x when theta >= 337.5f || theta < 22.5f => Compass.N,
+            float x when theta >= 22.5f && theta < 67.5f => Compass.NE,
+            float x when theta >= 67.5f && theta < 112.5f => Compass.E,
+            float x when theta >= 112.5f && theta < 157.5f => Compass.SE,
+            float x when theta >= 157.5f && theta < 202.5f => Compass.S,
+            float x when theta >= 202.5f && theta < 247.5f => Compass.SW,
+            float x when theta >= 247.5f && theta < 292.5f => Compass.W,
+            float x when theta >= 292.5f && theta < 337.5f => Compass.NW,
+            _ => throw new System.ArgumentException()
+        };
+    }
 }
