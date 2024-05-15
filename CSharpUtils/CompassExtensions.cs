@@ -33,6 +33,11 @@ public static class CompassExtensions
         return ((int)compass & 1) == 0;
     }
 
+    public static int CardinalToInt4(this Compass compass)
+    {
+        return (int)compass / 2;
+    }
+
     public static float ToDegrees(this Compass compass)
     {
         return compass switch
@@ -70,18 +75,17 @@ public static class CompassExtensions
         theta = theta > 360f ? theta % 360f :
             theta < 0 ? 360f - (theta % 360f) :
             theta;
-
         return theta switch
         {
-            float x when theta >= 337.5f || theta < 22.5f => Compass.N,
-            float x when theta >= 22.5f && theta < 67.5f => Compass.NE,
-            float x when theta >= 67.5f && theta < 112.5f => Compass.E,
-            float x when theta >= 112.5f && theta < 157.5f => Compass.SE,
-            float x when theta >= 157.5f && theta < 202.5f => Compass.S,
-            float x when theta >= 202.5f && theta < 247.5f => Compass.SW,
-            float x when theta >= 247.5f && theta < 292.5f => Compass.W,
-            float x when theta >= 292.5f && theta < 337.5f => Compass.NW,
-            _ => throw new System.ArgumentException()
+            float when theta >= 337.5f || theta < 22.5f => Compass.N,
+            float when theta >= 22.5f && theta < 67.5f => Compass.NE,
+            float when theta >= 67.5f && theta < 112.5f => Compass.E,
+            float when theta >= 112.5f && theta < 157.5f => Compass.SE,
+            float when theta >= 157.5f && theta < 202.5f => Compass.S,
+            float when theta >= 202.5f && theta < 247.5f => Compass.SW,
+            float when theta >= 247.5f && theta < 292.5f => Compass.W,
+            float when theta >= 292.5f && theta < 337.5f => Compass.NW,
+            _ => throw new ArgumentException("Somehow theta is not clamped")
         };
     }
 }

@@ -123,4 +123,20 @@ public class CompassTests
             Assert.That(Compass.NW.Opposite(), Is.EqualTo(Compass.SE));
         });
     }
+
+    [Test]
+    public void CompassCardinalToInt4()
+    {
+        Assert.Multiple(() =>
+        {
+            Assert.That(Compass.N.CardinalToInt4(), Is.EqualTo(0));
+            Assert.That(Compass.NE.CardinalToInt4(), Is.EqualTo(0));
+            Assert.That(Compass.E.CardinalToInt4(), Is.EqualTo(1));
+            Assert.That(Compass.SE.CardinalToInt4(), Is.EqualTo(1));
+            Assert.That(Compass.S.CardinalToInt4(), Is.EqualTo(2));
+            Assert.That(Compass.SW.CardinalToInt4(), Is.EqualTo(2));
+            Assert.That(Compass.W.CardinalToInt4(), Is.EqualTo(3));
+            Assert.That(Compass.NW.CardinalToInt4(), Is.EqualTo(3));
+        });
+    }
 }
