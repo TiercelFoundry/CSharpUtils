@@ -1,5 +1,6 @@
 ﻿namespace TiercelFoundry.CSharpUtils;
 
+// from https://github.com/Burtsev-Alexey/net-object-deep-copy
 public static class ArrayExtensions
 {
     public static void ForEach(this Array array, Action<Array, int[]> action)
@@ -11,6 +12,7 @@ public static class ArrayExtensions
     }
 }
 
+// from https://github.com/Burtsev-Alexey/net-object-deep-copy
 internal class ArrayTraverse
 {
     public int[] Position;
