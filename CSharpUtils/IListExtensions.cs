@@ -6,7 +6,7 @@ public static class IListExtensions
     public static T NextOrFirst<T>(this IList<T> list, T current)
     {
         int idx = list.IndexOf(current);
-        if (idx == -1) 
+        if (idx == -1)
         {
             throw new ArgumentException($"{list} does not contain {current} as an element");
         }

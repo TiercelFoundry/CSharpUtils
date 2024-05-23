@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace TiercelFoundry.CSharpUtils.Tests;
 
-public class CompassTests 
+public class CompassTests
 {
     [Test]
     public void CompassClockwiseTests()
