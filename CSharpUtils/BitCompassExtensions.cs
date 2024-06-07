@@ -1,4 +1,6 @@
-﻿namespace TiercelFoundry.CSharpUtils;
+﻿using System.Text.Json.Serialization;
+
+namespace TiercelFoundry.CSharpUtils;
 
 public static class BitCompassExtensions
 {
@@ -82,5 +84,19 @@ public static class BitCompassExtensions
             float when theta >= 292.5f && theta < 337.5f => BitCompass.NW,
             _ => throw new ArgumentException("Somehow theta is not clamped")
         };
+    }
+
+    public static Compass ToCompass(this BitCompass bitCompass)
+    {
+        int v = (int)bitCompass;
+        v--;
+        v |= v >> 1;
+        v |= v >> 2;
+        v |= v >> 4;
+        v |= v >> 8;
+        v |= v >> 16;
+        v++;
+
+        return (Compass)Math.Log2(v);
     }
 }

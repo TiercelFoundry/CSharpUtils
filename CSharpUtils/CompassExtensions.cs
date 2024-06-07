@@ -88,4 +88,9 @@ public static class CompassExtensions
             _ => throw new ArgumentException("Somehow theta is not clamped")
         };
     }
+
+    public static BitCompass ToBitCompass(this Compass compass)
+    {
+        return (BitCompass)(Math.Pow(2, (int)compass));
+    }
 }

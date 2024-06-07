@@ -139,4 +139,20 @@ public class CompassTests
             Assert.That(Compass.NW.CardinalToInt4(), Is.EqualTo(3));
         });
     }
+
+    [Test]
+    public void ToBitCompassTests()
+    {
+        Assert.Multiple(() =>
+        {
+            Assert.That(Compass.N.ToBitCompass(), Is.EqualTo(BitCompass.N));
+            Assert.That(Compass.NE.ToBitCompass(), Is.EqualTo(BitCompass.NE));
+            Assert.That(Compass.E.ToBitCompass(), Is.EqualTo(BitCompass.E));
+            Assert.That(Compass.SE.ToBitCompass(), Is.EqualTo(BitCompass.SE));
+            Assert.That(Compass.S.ToBitCompass(), Is.EqualTo(BitCompass.S));
+            Assert.That(Compass.SW.ToBitCompass(), Is.EqualTo(BitCompass.SW));
+            Assert.That(Compass.W.ToBitCompass(), Is.EqualTo(BitCompass.W));
+            Assert.That(Compass.NW.ToBitCompass(), Is.EqualTo(BitCompass.NW));
+        });
+    }
 }
