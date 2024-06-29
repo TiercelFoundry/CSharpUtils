@@ -28,6 +28,12 @@ public static class CompassExtensions
         return 8 - start.ClockwiseStepsTo(end);
     }
 
+    public static int ShortestStepsTo(this Compass start, Compass end)
+    {
+        var clockwise = ClockwiseStepsTo(start, end);
+        return Math.Min(clockwise, 8 - clockwise);
+    }
+
     public static bool IsCardinal(this Compass compass)
     {
         return ((int)compass & 1) == 0;

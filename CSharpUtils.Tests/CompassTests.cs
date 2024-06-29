@@ -155,4 +155,20 @@ public class CompassTests
             Assert.That(Compass.NW.ToBitCompass(), Is.EqualTo(BitCompass.NW));
         });
     }
+
+    [Test] 
+    public void ShortestStepsToTests()
+    {
+        Assert.Multiple(() =>
+        {
+            Assert.That(Compass.N.ShortestStepsTo(Compass.N), Is.EqualTo(0));
+            Assert.That(Compass.N.ShortestStepsTo(Compass.NE), Is.EqualTo(1));
+            Assert.That(Compass.N.ShortestStepsTo(Compass.E), Is.EqualTo(2));
+            Assert.That(Compass.N.ShortestStepsTo(Compass.SE), Is.EqualTo(3));
+            Assert.That(Compass.N.ShortestStepsTo(Compass.S), Is.EqualTo(4));
+            Assert.That(Compass.N.ShortestStepsTo(Compass.SW), Is.EqualTo(3));
+            Assert.That(Compass.N.ShortestStepsTo(Compass.W), Is.EqualTo(2));
+            Assert.That(Compass.N.ShortestStepsTo(Compass.NW), Is.EqualTo(1));
+        });
+    }
 }
