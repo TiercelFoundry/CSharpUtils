@@ -40,7 +40,7 @@ jobs:
     - name: Upload Std NuGet package to GitHub
       uses: actions/upload-artifact@v4
       with:
-        name: CSharpUtils
+        name: CSharpUtils-${{ steps.gitversion.outputs.SemVer }}
         path: ./CSharpUtils/bin/Release/ 
         
   release:
@@ -53,12 +53,12 @@ jobs:
     - name: Download nuget package artifact
       uses: actions/download-artifact@v4
       with:
-        name: CSharpUtils
+        name: CSharpUtils-${{ needs.build.outputs.Version }}
     - name: Prep packages
       run: dotnet nuget add source --username GrahameGW --password ${{ secrets.GH_NUGET_PACKAGE_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/tiercelfoundry/index.json"
     - name: Push package to GitHub packages 
       if: needs.build.outputs.CommitsSinceVersionSource > 0 #Only release if there has been a commit/version change  
-      run: dotnet nuget push CSharpUtils/*.nupkg --api-key ${{ secrets.GH_NUGET_PACKAGE_TOKEN }}  --source "github"
+      run: dotnet nuget push /**/*.nupkg --api-key ${{ secrets.GH_NUGET_PACKAGE_TOKEN }}  --source "github"
     
     # Create release
     - name: Create Release
